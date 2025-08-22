@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lankan Flavors - Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #8B0000;
+      color: white;
+    }
+    nav {
+      background-color: #600000;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .gender, .contact-methods {
+      margin-top: 5px;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .reset {
+      background-color: #555;
+      color: white;
+    }
+    .submit {
+      background-color: #FFD700;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="menu.html">Gallery & Menu</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <h1>Contact Us & Feedback</h1>
+    <form>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age">
+
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate">
+
+      <label>Gender:</label>
+      <div class="gender">
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+      </div>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" name="contact">
+
+      <label>Preferred Contact Method:</label>
+      <div class="contact-methods">
+        <input type="checkbox" id="cmail" name="contactmethod" value="Email">
+        <label for="cmail">Email</label>
+        <input type="checkbox" id="ccall" name="contactmethod" value="Call">
+        <label for="ccall">Call</label>
+        <input type="checkbox" id="ctext" name="contactmethod" value="Text">
+        <label for="ctext">Text</label>
+      </div>
+
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" name="feedback"></textarea>
+
+      <div class="buttons">
+        <button type="reset" class="reset">Reset</button>
+        <button type="submit" class="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

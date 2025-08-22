@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lankan Flavors - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #8B0000;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #FFD700; /* Gold hover */
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 65px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 22px;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
+    .btn {
+      padding: 15px 30px;
+      background-color: #FFD700;
+      color: #600000;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background-color: #ffcc00;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="menu.html">Gallery & Menu</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to Sri Lankan Flavors</h1>
+      <p>Discover the authentic taste of Sri Lankan cuisine. From spicy curries to sweet delicacies, every dish is crafted with tradition and love.</p>
+      <a href="menu.html" class="btn">View Menu</a>
+    </div>
+  </div>
+</body>
+</html>
