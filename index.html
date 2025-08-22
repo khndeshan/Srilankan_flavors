@@ -1,132 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Lankan Flavors - Home</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #8B0000;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lankan Flavors - Home</title>
+<style>
+body {margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#8B0000; color:white;}
+/* Navbar */
+nav {background-color:#600000; padding:10px 20px; position:relative;}
+.nav-container {display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;}
+.logo {font-size:20px; font-weight:bold;}
+.nav-links {list-style:none; display:flex; margin:0; padding:0;}
+.nav-links li {margin-left:20px;}
+.nav-links li a {color:white; text-decoration:none; font-weight:bold;}
+.nav-links li a:hover {color:#FFD700;}
+.menu-toggle {display:none; flex-direction:column; cursor:pointer;}
+.menu-toggle .bar {width:25px; height:3px; background:white; margin:4px 0; transition:0.4s;}
 
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: rgba(96,0,0,0.9);
-      padding: 15px;
-      text-align: center;
-      z-index: 100;
-    }
+/* Hero */
+.hero {height:100vh; background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092'); background-size:cover; background-position:center; position:relative; display:flex; justify-content:center; align-items:center; text-align:center;}
+.overlay {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55);}
+.hero-content {position:relative; z-index:2; animation:fadeIn 2s ease-in-out; padding:0 20px;}
+.hero h1 {font-size:65px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
+.hero p {font-size:22px; max-width:650px; margin:0 auto 30px auto; line-height:1.6;}
+.btn {padding:15px 30px; background-color:#FFD700; color:#600000; font-weight:bold; font-size:18px; border:none; border-radius:30px; cursor:pointer; text-decoration:none; transition: transform 0.3s, background 0.3s;}
+.btn:hover {transform:scale(1.05); background-color:#ffcc00;}
+@keyframes fadeIn {from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);}}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #FFD700;
-    }
-
-    .hero {
-      height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.55);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 2s ease-in-out;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 65px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-
-    .hero p {
-      font-size: 22px;
-      max-width: 650px;
-      margin: 0 auto 30px auto;
-      line-height: 1.6;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      background-color: #FFD700;
-      color: #600000;
-      font-weight: bold;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      background-color: #ffcc00;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 40px; }
-      .hero p { font-size: 16px; }
-      .btn { font-size: 16px; padding: 12px 25px; }
-      nav a { font-size: 16px; margin: 0 10px; }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 28px; }
-      .hero p { font-size: 14px; }
-      .btn { font-size: 14px; padding: 10px 20px; }
-      nav a { display: block; margin: 10px 0; }
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:40px;}
+  .hero p{font-size:16px;}
+  .btn{font-size:16px; padding:12px 25px;}
+  .nav-links{position:absolute; top:60px; right:0; background:#600000; flex-direction:column; width:200px; display:none; border-radius:0 0 5px 5px;}
+  .nav-links li{margin:10px 0; text-align:center;}
+  .nav-links.active{display:flex;}
+  .menu-toggle{display:flex;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:28px;}
+  .hero p{font-size:14px;}
+  .btn{font-size:14px; padding:10px 20px;}
+  .nav-links li a{font-size:14px;}
+}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="menu.html">Gallery & Menu</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Welcome to Sri Lankan Flavors</h1>
-      <p>Discover the authentic taste of Sri Lankan cuisine. From spicy curries to sweet delicacies, every dish is crafted with tradition and love.</p>
-      <a href="menu.html" class="btn">View Menu</a>
+<nav>
+  <div class="nav-container">
+    <div class="logo">🍛 Sri Lankan Flavors</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="menu.html">Gallery & Menu</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
   </div>
+</nav>
+
+<div class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Welcome to Sri Lankan Flavors</h1>
+    <p>Discover the authentic taste of Sri Lankan cuisine. From spicy curries to sweet delicacies, every dish is crafted with tradition and love.</p>
+    <a href="menu.html" class="btn">View Menu</a>
+  </div>
+</div>
+
+<script>
+const menuToggle=document.getElementById('mobile-menu');
+const navLinks=document.querySelector('.nav-links');
+menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+</script>
 </body>
 </html>

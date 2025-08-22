@@ -5,30 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Lankan Flavors - Contact Us</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background-color:#8B0000;color:white;}
-nav{background-color:#600000;padding:15px;text-align:center;}
-nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold;}
-nav a:hover{text-decoration:underline;}
-.container{max-width:90%;margin:auto;padding:20px;background:rgba(0,0,0,0.5);border-radius:10px;}
-h1{text-align:center;margin-bottom:20px;}
-form{display:flex;flex-direction:column;}
-label{margin-top:15px;font-weight:bold;}
-input,textarea,select{padding:10px;margin-top:5px;border-radius:5px;border:none;font-size:16px;}
-textarea{min-height:100px;resize:vertical;}
-.gender,.contact-methods{margin-top:5px;}
-.buttons{margin-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;}
-button{padding:12px 20px;font-size:16px;font-weight:bold;border:none;border-radius:5px;cursor:pointer;margin-top:10px;}
-.reset{background-color:#555;color:white;}
-.submit{background-color:#FFD700;color:#600000;}
-@media(max-width:480px){h1{font-size:28px;} input,textarea,select,button{font-size:14px;padding:8px;}}
+body{margin:0; font-family:Arial,sans-serif; background-color:#8B0000; color:white;}
+/* Navbar */
+nav {background-color:#600000; padding:10px 20px; position:relative;}
+.nav-container {display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;}
+.logo {font-size:20px; font-weight:bold;}
+.nav-links {list-style:none; display:flex; margin:0; padding:0;}
+.nav-links li {margin-left:20px;}
+.nav-links li a {color:white; text-decoration:none; font-weight:bold;}
+.nav-links li a:hover {color:#FFD700;}
+.menu-toggle {display:none; flex-direction:column; cursor:pointer;}
+.menu-toggle .bar {width:25px; height:3px; background:white; margin:4px 0; transition:0.4s;}
+
+/* Container & Form */
+.container {max-width:90%; margin:auto; padding:20px; background:rgba(0,0,0,0.5); border-radius:10px;}
+h1{text-align:center; margin-bottom:20px;}
+form{display:flex; flex-direction:column;}
+label{margin-top:15px; font-weight:bold;}
+input,textarea,select{padding:10px; margin-top:5px; border-radius:5px; border:none; font-size:16px;}
+textarea{min-height:100px; resize:vertical;}
+.gender,.contact-methods{margin-top:5px; display:flex; gap:10px; flex-wrap:wrap;}
+.buttons{margin-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap;}
+button{padding:12px 20px; font-size:16px; font-weight:bold; border:none; border-radius:5px; cursor:pointer; margin-top:10px;}
+.reset{background-color:#555; color:white;}
+.submit{background-color:#FFD700; color:#600000;}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{position:absolute; top:60px; right:0; background:#600000; flex-direction:column; width:200px; display:none; border-radius:0 0 5px 5px;}
+  .nav-links li{margin:10px 0; text-align:center;}
+  .nav-links.active{display:flex;}
+  .menu-toggle{display:flex;}
+}
+@media(max-width:480px){
+  h1{font-size:28px;}
+  input,textarea,select,button{font-size:14px; padding:8px;}
+}
 </style>
 </head>
 <body>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="menu.html">Gallery & Menu</a>
-<a href="contact.html">Contact Us</a>
+  <div class="nav-container">
+    <div class="logo">🍛 Sri Lankan Flavors</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="menu.html">Gallery & Menu</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
@@ -72,5 +103,12 @@ button{padding:12px 20px;font-size:16px;font-weight:bold;border:none;border-radi
 </div>
 </form>
 </div>
+
+<script>
+const menuToggle=document.getElementById('mobile-menu');
+const navLinks=document.querySelector('.nav-links');
+menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+</script>
+
 </body>
 </html>

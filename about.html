@@ -1,67 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Lankan Flavors - About Us</title>
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background-color: #8B0000; color: white; }
-    nav { background-color: #600000; padding: 15px; text-align:center; }
-    nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
-    nav a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lankan Flavors - About Us</title>
+<style>
+body {margin:0; font-family:Arial, sans-serif; background-color:#8B0000; color:white;}
+/* Navbar */
+nav {background-color:#600000; padding:10px 20px; position:relative;}
+.nav-container {display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;}
+.logo {font-size:20px; font-weight:bold;}
+.nav-links {list-style:none; display:flex; margin:0; padding:0;}
+.nav-links li {margin-left:20px;}
+.nav-links li a {color:white; text-decoration:none; font-weight:bold;}
+.nav-links li a:hover {color:#FFD700;}
+.menu-toggle {display:none; flex-direction:column; cursor:pointer;}
+.menu-toggle .bar {width:25px; height:3px; background:white; margin:4px 0; transition:0.4s;}
 
-    .container { max-width:90%; margin:auto; padding:20px; }
-    h1,h2 { text-align:center; margin-bottom:20px; }
-    .section { background: rgba(0,0,0,0.5); padding:20px; border-radius:10px; margin-bottom:20px; }
+/* Container */
+.container {max-width:90%; margin:auto; padding:20px;}
+h1,h2{text-align:center; margin-bottom:20px;}
+.section {background:rgba(0,0,0,0.5); padding:20px; border-radius:10px; margin-bottom:20px;}
+iframe {width:100%; height:300px; border:0; margin-top:15px;}
 
-    iframe { width: 100%; height: 300px; border:0; margin-top:15px; }
-
-    @media(max-width:480px){
-      h1{ font-size:28px; }
-      h2{ font-size:22px; }
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{position:absolute; top:60px; right:0; background:#600000; flex-direction:column; width:200px; display:none; border-radius:0 0 5px 5px;}
+  .nav-links li{margin:10px 0; text-align:center;}
+  .nav-links.active{display:flex;}
+  .menu-toggle{display:flex;}
+}
+@media(max-width:480px){h1{font-size:28px;} h2{font-size:22px;}}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="menu.html">Gallery & Menu</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-
-  <div class="container">
-    <h1>About Us</h1>
-    <div class="section">
-      <h2>Our Story</h2>
-      <p>Founded in 2005, Sri Lankan Flavors started as a small family-run eatery in Colombo. Today, we serve thousands of happy customers while keeping traditional recipes alive.</p>
+<nav>
+  <div class="nav-container">
+    <div class="logo">🍛 Sri Lankan Flavors</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
-    <div class="section">
-      <h2>Vision & Mission</h2>
-      <p><strong>Vision:</strong> To become a leading Sri Lankan cuisine restaurant recognized worldwide for authentic taste and hospitality.</p>
-      <p><strong>Mission:</strong> To provide our customers with fresh, delicious, authentic meals with warmth and excellent service.</p>
-    </div>
-    <div class="section">
-      <h2>Our Locations</h2>
-      <p>📍 Colombo (Head Office)<br>
-         📍 Kandy<br>
-         📍 Galle<br>
-         📍 Jaffna<br>
-         📍 Negombo<br>
-         📍 Matara</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.123456!2d79.861243!3d6.927079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2576f2e5f1234%3A0xabcdef123456789!2sColombo"
-        allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="section">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Dine-in</li>
-        <li>Takeaway</li>
-        <li>Home Delivery</li>
-        <li>Catering Services</li>
-      </ul>
-    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="menu.html">Gallery & Menu</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
   </div>
+</nav>
+
+<div class="container">
+<h1>About Us</h1>
+
+<div class="section">
+<h2>Our Story</h2>
+<p>Founded in 2005, Sri Lankan Flavors started as a small family-run eatery in Colombo. Today, we serve thousands of happy customers while keeping traditional recipes alive.</p>
+</div>
+
+<div class="section">
+<h2>Vision & Mission</h2>
+<p><strong>Vision:</strong> To become a leading Sri Lankan cuisine restaurant recognized worldwide for authentic taste and hospitality.</p>
+<p><strong>Mission:</strong> To provide our customers with fresh, delicious, authentic meals with warmth and excellent service.</p>
+</div>
+
+<div class="section">
+<h2>Our Locations</h2>
+<p>📍 Colombo (Head Office)<br>
+   📍 Kandy<br>
+   📍 Galle<br>
+   📍 Jaffna<br>
+   📍 Negombo<br>
+   📍 Matara</p>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.123456!2d79.861243!3d6.927079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2576f2e5f1234%3A0xabcdef123456789!2sColombo"
+allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="section">
+<h2>Our Services</h2>
+<ul>
+<li>Dine-in</li>
+<li>Takeaway</li>
+<li>Home Delivery</li>
+<li>Catering Services</li>
+</ul>
+</div>
+</div>
+
+<script>
+const menuToggle=document.getElementById('mobile-menu');
+const navLinks=document.querySelector('.nav-links');
+menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+</script>
 </body>
 </html>
