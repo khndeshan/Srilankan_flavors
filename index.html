@@ -10,32 +10,29 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #8B0000;
       color: white;
-      overflow-x: hidden;
     }
 
-    /* Navbar */
     nav {
-      position: absolute;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
+      background-color: rgba(96,0,0,0.9);
+      padding: 15px;
       text-align: center;
-      z-index: 10;
+      z-index: 100;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 15px;
       font-weight: 500;
       font-size: 18px;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #FFD700; /* Gold hover */
+      color: #FFD700;
     }
 
-    /* Hero Section */
     .hero {
       height: 100vh;
       background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
@@ -45,7 +42,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
+
     .overlay {
       position: absolute;
       top: 0; left: 0;
@@ -53,23 +52,27 @@
       background: rgba(0,0,0,0.55);
       z-index: 1;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
-      text-align: center;
       animation: fadeIn 2s ease-in-out;
+      padding: 0 20px;
     }
+
     .hero h1 {
       font-size: 65px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
+
     .hero p {
       font-size: 22px;
       max-width: 650px;
       margin: 0 auto 30px auto;
       line-height: 1.6;
     }
+
     .btn {
       padding: 15px 30px;
       background-color: #FFD700;
@@ -82,20 +85,34 @@
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
     }
+
     .btn:hover {
       transform: scale(1.05);
       background-color: #ffcc00;
     }
 
-    /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 40px; }
+      .hero p { font-size: 16px; }
+      .btn { font-size: 16px; padding: 12px 25px; }
+      nav a { font-size: 16px; margin: 0 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 14px; }
+      .btn { font-size: 14px; padding: 10px 20px; }
+      nav a { display: block; margin: 10px 0; }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -103,7 +120,6 @@
     <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- Hero Section -->
   <div class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
