@@ -14,8 +14,8 @@ nav {background-color:#600000; padding:10px 20px; position:relative;}
 .nav-links li {margin-left:20px;}
 .nav-links li a {color:white; text-decoration:none; font-weight:bold;}
 .nav-links li a:hover {color:#FFD700;}
-.menu-toggle {display:none; flex-direction:column; cursor:pointer;}
-.menu-toggle .bar {width:25px; height:3px; background:white; margin:4px 0; transition:0.4s;}
+.menu-toggle{display:none; flex-direction:column; cursor:pointer; width:40px; height:30px; justify-content:space-between; z-index:10;}
+.menu-toggle .bar{width:100%; height:3px; background:white; margin:0; transition:0.4s;}
 
 /* Hero */
 .hero {height:100vh; background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092'); background-size:cover; background-position:center; position:relative; display:flex; justify-content:center; align-items:center; text-align:center;}
@@ -32,9 +32,9 @@ nav {background-color:#600000; padding:10px 20px; position:relative;}
   .hero h1{font-size:40px;}
   .hero p{font-size:16px;}
   .btn{font-size:16px; padding:12px 25px;}
-  .nav-links{position:absolute; top:60px; right:0; background:#600000; flex-direction:column; width:200px; display:none; border-radius:0 0 5px 5px;}
-  .nav-links li{margin:10px 0; text-align:center;}
+  .nav-links{position:absolute; top:60px; right:0; background:#600000; flex-direction:column; width:200px; display:none; border-radius:0 0 5px 5px; z-index:9;}
   .nav-links.active{display:flex;}
+  .nav-links li{margin:10px 0; text-align:center;}
   .menu-toggle{display:flex;}
 }
 @media(max-width:480px){
@@ -76,6 +76,11 @@ nav {background-color:#600000; padding:10px 20px; position:relative;}
 const menuToggle=document.getElementById('mobile-menu');
 const navLinks=document.querySelector('.nav-links');
 menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+document.addEventListener('click', function(event){
+  if(!navLinks.contains(event.target) && !menuToggle.contains(event.target)){
+    navLinks.classList.remove('active');
+  }
+});
 </script>
 </body>
 </html>
